@@ -8,61 +8,75 @@
 	<body>
 		<div class="device-list-container"> <!--add container -->
 			<p>Device List</p> <!--change to heading-->
-			<table border="1">
-			    <tr>
-			        <td>Device ID</td>
-			        <td>Store ID</td>
-			        <td>Experience</td>
-			    	<td>Zone</td>
-			    	<td>Content Version</td>
-			    	<td>Available Content Version</td>
-			    	<td>Device Status</td>
-			    	<td>Update Status</td>
-				</tr>
-
-			    <tr>
-			        <td>4</td>
-			        <td>13</td>
-			        <td>null</td>
-			        <td>4</td>
-			        <td>1.0</td>
-			        <td>1.0</td>
-			        <td>disconnected</td>
-			        <td>null</td>
-			    </tr>
-			    <tr>
-			        <td>2</td>
-			        <td>13</td>
-			        <td>null</td>
-			        <td>2</td>
-			        <td>1.0</td>
-			        <td>1.0</td>
-			        <td>disconnected</td>
-			        <td>null</td>
-			    </tr>
-			    <tr>
-			        <td>3</td>
-			        <td>13</td>
-			        <td>null</td>
-			        <td>3</td>
-			        <td>1.0</td>
-			        <td>1.0</td>
-			        <td>disconnected</td>
-			        <td>null</td>
-			    </tr>
-			    <tr>
-			        <td>1</td>
-			        <td>12</td>
-			        <td>DZTS</td>
-			        <td>1</td>
-			        <td>1.0</td>
-			        <td>1.0</td>
-			        <td>disconnected</td>
-			        <td>null</td>
-			    </tr>
+			<table> <!-- add classes remove boder -->
+				<thead>
+						<tr>
+					        <th>Device ID</th>
+					        <th>Store ID</th>
+					        <th>Experience</th>
+					    	<th>Zone</th>
+					    	<th>Content Version</th>
+					    	<th>Available Content Version</th>
+					    	<th>Device Status</th>
+					    	<th>Update Status</th>
+						</tr>
+				</thead>
+					<!-- change to table head -->
+				    <!-- <tr>
+				        <td>Device ID</td>
+				        <td>Store ID</td>
+				        <td>Experience</td>
+				    	<td>Zone</td>
+				    	<td>Content Version</td>
+				    	<td>Available Content Version</td>
+				    	<td>Device Status</td>
+				    	<td>Update Status</td>
+					</tr> -->
+				<tbody> <!-- add table body -->
+				    <tr>
+				        <td>4</td>
+				        <td>13</td>
+				        <td>null</td>
+				        <td>4</td>
+				        <td>1.0</td>
+				        <td>1.0</td>
+				        <td>disconnected</td>
+				        <td>null</td>
+				    </tr>
+				    <tr>
+				        <td>2</td>
+				        <td>13</td>
+				        <td>null</td>
+				        <td>2</td>
+				        <td>1.0</td>
+				        <td>1.0</td>
+				        <td>disconnected</td>
+				        <td>null</td>
+				    </tr>
+				    <tr>
+				        <td>3</td>
+				        <td>13</td>
+				        <td>null</td>
+				        <td>3</td>
+				        <td>1.0</td>
+				        <td>1.0</td>
+				        <td>disconnected</td>
+				        <td>null</td>
+				    </tr>
+				    <tr>
+				        <td>1</td>
+				        <td>12</td>
+				        <td>DZTS</td>
+				        <td>1</td>
+				        <td>1.0</td>
+				        <td>1.0</td>
+				        <td>disconnected</td>
+				        <td>null</td>
+				    </tr>
+				</tbody>
 			</table>
 
-			<hr /> <!--remove-->
+			<!-- <hr />  --><!--remove-->
 
 			<p>Select devices to update</p> <!--change to heading-->
 			<form action="/bin/verizon-socketbox/manage" method="POST">
