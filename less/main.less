@@ -36,6 +36,7 @@
 	list-style: 20px;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
+	padding-bottom: 36px;
 	position: relative;
 	h1 {
 		color: @heading-font-color;
@@ -44,5 +45,26 @@
 		line-height: 42px;
 		padding-top: 16px;
 		text-align: center;
+	}
+}
+
+
+
+// form
+.device-list-form {
+	width: 100%;
+	max-width: 85%;
+	margin: 0 auto;
+	select {
+		border: none;
+		display: block;
+		width:40%;
+		option {
+			border: 0;
+			color: @heading-font-color;
+			font-size: 14px;
+			line-height: 19px;
+			padding: 16px;
+		}
 	}
 }

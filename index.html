@@ -78,10 +78,12 @@
 
 			<!-- <hr />  --><!--remove-->
 
-			<p>Select devices to update</p> <!--change to heading-->
-			<form action="/bin/verizon-socketbox/manage" method="POST">
+			<h1>Select devices to update</h1> <!--change to heading-->
+			<form action="/bin/verizon-socketbox/manage" method="POST"
+			class="device-list-form">
 			    <input type="hidden" name="command" value="sendupdate" />
-			    <select name="devices" multiple>
+			    <select name="devices" multiple
+			    class="select-device-list shadow">
 
 			        <option value="4">4</option>
 
