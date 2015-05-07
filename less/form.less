@@ -4,6 +4,19 @@
 
 	*/
 
+.choices {
+	width: 85%;
+	margin: 0 auto;
+	h3 {
+		font-weight: normal;
+		display: inline-block;
+		color: @heading-font-color;
+		&:nth-child(2) {
+			float: right;
+		}
+	}
+}
+
 .device-select-form {
 	width: 100%;
 	max-width: 85%;
@@ -12,9 +25,10 @@
 	.ms-selectable,
 	.ms-selection {
 		display: inline-block;
-		min-height: 200px;
+		height: 250px;
 		.shadow;
 		width: 45%;
+		overflow: scroll;
 		margin-bottom: 35px;
 		background-color: @table-bg;
 		> ul {

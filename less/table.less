@@ -13,13 +13,20 @@
 @table-bg-active:               @table-bg-hover;
 @table-border-color:            #e0e0e0;
 
+.device-table {
+	height: 300px;
+	overflow: scroll;
+	margin: 0 auto;
+	max-width: 85%;
+
+}
 .device-list-table {
 	width: 100%;
-	max-width: 85%;
 	margin: 0 auto;
 	border-collapse: collapse;
 	background-color: @table-bg;
 	color: #4A4A4A;
+	position: relative;
 	> thead,
 	> tbody,
 	> tfoot {
