@@ -1,1 +1,1 @@
-$('#my-select').multiSelect()
+$('#device-select').multiSelect()
