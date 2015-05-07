@@ -34,6 +34,7 @@
 		> ul {
 			list-style: none;
 			padding: 0;
+			margin: 0px;
 			> li {
 				padding: @table-cell-padding;
 				border-bottom: 1px solid @table-border-color;
@@ -44,13 +45,23 @@
 			}
 		}
 	}
-
-	.ms-selectable{
-		float: left;
+	.ms-selection{
+			float: right;
 	}
-
-	.ms-selection {
-		float: right;
+	.right-left {
+	    position: relative;
+	    width: 0;
+	    height: 0;
+	    border-top: 30px solid transparent;
+	    border-right: 30px solid @table-header-font-color;
+	    /*transform*/
+	    -webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    margin: auto;
+	    top: -200px;
 	}
 }
 
