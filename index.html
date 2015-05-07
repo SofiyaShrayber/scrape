@@ -82,21 +82,33 @@
 			<form action="/bin/verizon-socketbox/manage" method="POST"
 			class="device-list-form"> <!--add class -->
 			    <input type="hidden" name="command" value="sendupdate" />
-			    <select name="devices" multiple
-			    class="select-device-list shadow"> <!--add class -->
+			    	<div class="connected">
 
-			        <option value="4">4</option>
+					    <select name="devices" multiple
+					    class="select-device-list shadow connected1 left"> <!--add class -->
 
-			        <option value="2">2</option>
+					        <option value="4">4</option>
 
-			        <option value="3">3</option>
+					        <option value="2">2</option>
 
-			        <option value="1">1</option>
+					        <option value="3">3</option>
 
-			    </select>
+					        <option value="1">1</option>
+
+					    </select>
+
+					    <select name="devices" multiple
+					    class="select-device-list shadow connected2 right"> <!--add class -->
+
+					        
+
+					    </select>
+					</div>
 			    <input class="button" type="submit" value="Submit" /> <!--add class -->
 			</form>
 		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="jquery.sortable.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
