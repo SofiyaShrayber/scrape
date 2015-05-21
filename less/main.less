@@ -49,57 +49,18 @@
 }
 
 
-body {
-      padding: 20px;
-      background-color: #FFF7DC;
-      color: black;
-      min-width: 530px;
-    }
-    h2, h3 {
-      width: 100%;
-      text-align: center;
-      margin: 1.5em 0 .5em 0;
-    }
-    p {
-      width: 50%;
-      margin: 10px auto;
-    }
-    
-    a {
-      color: black;
-      text-decoration: underline;
-    }
-    a:hover {
-      text-decoration: none;
-      background-color: #D5ECFF;
-    }
-    td {
-      border-bottom: 1px solid #ccc;
-      padding: 5px;
-      text-align: left; /* IE */
-    }
-    td + td {
-      border-left: 1px solid #ccc;
-    }
-    th {
-      padding: 0 5px;
-      text-align: left; /* IE */
-    }
-    .header-background {
-      border-bottom: 1px solid black;
-    }
     
     /* above this is decorative, not part of the test */
     
     .fixed-table-container {
-      width: 50%;
-      height: 200px;
-      border: 1px solid black;
-      margin: 10px auto;
-      background-color: white;
+      max-width: 85%;
+      height: 300px;
+      // border: 1px solid black;
+      margin: 0px auto;
+      background-color: @table-bg;
       /* above is decorative or flexible */
       position: relative; /* could be absolute or relative */
-      padding-top: 30px; /* height of header */
+      padding-top: 47px; /* height of header */
     }
 
     .fixed-table-container-inner {
@@ -110,71 +71,113 @@ body {
      
     .header-background {
       background-color: #D5ECFF;
-      height: 30px; /* height of header */
+      height: 47px; /* height of header */
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
     }
     
-    table {
-      background-color: white;
-      width: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
+    // table {
+    //   background-color: white;
+    //   width: 100%;
+    //   overflow-x: hidden;
+    //   overflow-y: auto;
+    // }
 
+
+table {
+	width: 100%;
+	margin: 0 auto;
+	// border-collapse: collapse;
+	background-color: @table-bg;
+	color: #4A4A4A;
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-size: 14px;
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			.transition(all .3s ease);
+			// > th,
+			> td {
+				text-align: left;
+				padding: @table-cell-padding;
+				vertical-align: top;
+				border-top: 0;
+				.transition(all .3s ease);
+			}
+		}
+	}
+	> thead > tr > th {
+		font-weight: @table-header-font-weight;
+		color: @table-header-font-color;
+		// vertical-align: bottom;
+		// border-bottom: 1px solid rgba(0,0,0,.12);
+	}
+	// > caption + thead,
+	// > colgroup + thead,
+	// > thead:first-child {
+	// 	> tr:first-child {
+	// 		> th,
+	// 		> td {
+	// 			border-top: 0;
+	// 		}
+	// 	}
+	// }
+	> tbody + tbody {
+		border-top: 1px solid rgba(0,0,0,.12);
+	}
+}
     .th-inner {
       position: absolute;
       top: 0;
-      line-height: 30px; /* height of header */
+      line-height: 47px; /* height of header */
       text-align: left;
-      border-left: 1px solid black;
-      padding-left: 5px;
-      margin-left: -5px;
+      border-left: @table-border-color;
+      // padding-left: 5px;
+      // margin-left: -5px;
     }
-    .first .th-inner {
-        border-left: none;
-        padding-left: 6px;
-      }
+
     
     /* extra-wrap */
     
-    .extrawrap th {
-      text-align: center;
-    }
+    // .extrawrap th {
+    //   text-align: center;
+    // }
     
-    .extra-wrap {
-      width: 100%;
-    }
+    // .extra-wrap {
+    //   width: 100%;
+    // }
     
     /* Zupa styles for centered headers */
     
-    .zupa div.zupa1 {
-      margin: 0 auto !important;
-      width: 0 !important;
-    }
+    // .zupa div.zupa1 {
+    //   margin: 0 auto !important;
+    //   width: 0 !important;
+    // }
     
-    .zupa div.th-inner {
-      width: 100%;
-      margin-left: -50%;
-      text-align: center;
-      border: none;
-    }
+    // .zupa div.th-inner {
+    //   width: 100%;
+    //   margin-left: -50%;
+    //   text-align: center;
+    //   border: none;
+    // }
 
     /* for hidden header hack to calculate widths of dynamic content */
+    /* enough width to show all header text, or bad things happen */
+    // .hidden-head {
+    //   min-width: 530px; 
+    // }
     
-    .hidden-head {
-      min-width: 530px; /* enough width to show all header text, or bad things happen */
-    }
-    
-    .hidden-header .th-inner {
-      position: static;
-      overflow-y: hidden;
-      height: 0;
-      white-space: nowrap;
-      padding-right: 5px;
-    }
+    // .hidden-header .th-inner {
+    //   position: static;
+    //   overflow-y: hidden;
+    //   height: 0;
+    //   white-space: nowrap;
+    //   padding-right: 5px;
+    // }
     
     /* for complex headers */
     
@@ -207,3 +210,22 @@ body {
       background: url("icons/desc.gif") 0 7px no-repeat transparent;
     }
 
+// Zebra-striping
+.table-striped {
+	> tbody > tr:nth-child(odd) {
+		> td,
+		> th {
+			background-color: @table-bg-accent;
+		}
+	}
+}
+
+// Hover effect
+.table-hover {
+	> tbody > tr:hover {
+		> td,
+		> th {
+			background-color: @table-bg-hover;
+		}
+	}
+}
