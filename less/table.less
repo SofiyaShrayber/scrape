@@ -13,73 +13,117 @@
 @table-bg-active:               @table-bg-hover;
 @table-border-color:            #e0e0e0;
 
-// .device-table {
-// 	height: 300px;
-// 	overflow: scroll;
-// 	margin: 0 auto;
-// 	max-width: 85%;
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
 
-// }
-// .device-list-table {
-// 	width: 100%;
-// 	margin: 0 auto;
-// 	border-collapse: collapse;
-	// background-color: @table-bg;
-	// color: #4A4A4A;
-// 	position: relative;
-// 	> thead,
-// 	> tbody,
-// 	> tfoot {
-// 		> tr {
-// 			.transition(all .3s ease);
-// 			> th,
-// 			> td {
-// 				text-align: left;
-// 				padding: @table-cell-padding;
-// 				vertical-align: top;
-// 				border-top: 0;
-// 				.transition(all .3s ease);
-// 			}
-// 		}
-// 	}
-// 	> thead > tr > th {
-// 		font-weight: @table-header-font-weight;
-// 		color: @table-header-font-color;
-// 		vertical-align: bottom;
-// 		border-bottom: 1px solid rgba(0,0,0,.12);
-// 	}
-// 	> caption + thead,
-// 	> colgroup + thead,
-// 	> thead:first-child {
-// 		> tr:first-child {
-// 			> th,
-// 			> td {
-// 				border-top: 0;
-// 			}
-// 		}
-// 	}
-// 	> tbody + tbody {
-// 		border-top: 1px solid rgba(0,0,0,.12);
-// 	}
-// }
+.fixed-table-container {
+	max-width: 85%;
+	height: 300px;
+	margin: 0px auto;
+	background-color: @table-bg;
+	position: relative;
+	padding-top: 47px;
+}
 
+.fixed-table-container-inner {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+ 
+.header-background {
+	height: 47px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.th-inner {
+	  position: absolute;
+	  top: 0;
+	  line-height: 47px;
+	  text-align: left;
+	  padding-left: 14px;
+}
+
+table {
+	width: 100%;
+	margin: 0 auto;
+	background-color: @table-bg;
+	color: #4A4A4A;
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-size: 14px;
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			.transition(all .3s ease);
+			> td {
+				text-align: left;
+				padding: @table-cell-padding;
+				border-top: 0;
+				.transition(all .3s ease);
+			}
+		}
+	}
+	> thead > tr > th {
+		font-weight: @table-header-font-weight;
+		color: @table-header-font-color;
+		min-width: 100px;
+		padding: 0px;
+	}
+	> tbody + tbody {
+		border-top: 1px solid rgba(0,0,0,.12);
+	}
+}
+
+.fixed-table-container.sort-decoration { 
+	overflow-x: hidden;
+	min-width: 530px; 
+}
+.sort-decoration .th-inner {
+	width: 100%;
+}
+.header .th-inner {
+  background-color: #fff;
+}
+.headerSortUp .th-inner, .headerSortDown .th-inner {
+  background-color: @table-bg-hover;
+}
+.sortArrow {
+  background: url("icons/bg.gif") 0 4px no-repeat transparent;
+  padding: 1px 10px;
+  line-height: 30px;
+}
+.headerSortUp .sortArrow {
+  background: url("icons/asc.gif") 0 7px no-repeat transparent;
+}
+.headerSortDown .sortArrow {
+  background: url("icons/desc.gif") 0 7px no-repeat transparent;
+}
 
 // Zebra-striping
-// .table-striped {
-// 	> tbody > tr:nth-child(odd) {
-// 		> td,
-// 		> th {
-// 			background-color: @table-bg-accent;
-// 		}
-// 	}
-// }
+.table-striped {
+	> tbody > tr:nth-child(odd) {
+		> td,
+		> th {
+			background-color: @table-bg-accent;
+		}
+	}
+}
 
 // Hover effect
-// .table-hover {
-// 	> tbody > tr:hover {
-// 		> td,
-// 		> th {
-// 			background-color: @table-bg-hover;
-// 		}
-// 	}
-// }
+.table-hover {
+	> tbody > tr:hover {
+		> td,
+		> th {
+			background-color: @table-bg-hover;
+		}
+	}
+}
