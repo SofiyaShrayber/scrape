@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div class="device-list-container"> <!--add container -->
-
+			<h1>Device List</h1> 
 			<div class="fixed-table-container sort-decoration shadow">
 				<div class="header-background"> </div>
 				<div class="fixed-table-container-inner">
@@ -160,18 +160,66 @@
 				</div>
 			</div>
 
+			<h1>Select devices to update</h1> <!--change to heading-->
+			<div class="choices"> <!--change to heading-->
+				<h3>Available</h3>
+				<h3>Selected</h3>
+			</div>
+
+						<form action="/bin/verizon-socketbox/manage" method="POST"
+			class="device-select-form"> <!--add class -->
+			    <input type="hidden" name="command" value="sendupdate" />
+
+
+					    <select name="devices" multiple="multiple" id="device-select" name="device-select[]"
+					    class="select-device-list shadow"> <!--add class -->
+
+					        <option value="4">4</option>
+
+					        <option value="2">2</option>
+
+					        <option value="3">3</option>
+
+					        <option value="1">1</option>
+
+					        <option value="4">4</option>
+
+					        <option value="2">2</option>
+
+					        <option value="3">3</option>
+
+					        <option value="1">1</option>
+
+					        <option value="4">4</option>
+
+					        <option value="2">2</option>
+
+					        <option value="3">3</option>
+
+					        <option value="1">1</option>
+
+					        <option value="4">4</option>
+
+					        <option value="2">2</option>
+
+					        <option value="3">3</option>
+
+					        <option value="1">1</option>
+
+					        <option value="4">4</option>
+
+					        <option value="2">2</option>
+
+					        <option value="3">3</option>
+
+					        <option value="1">1</option>
+
+					    </select>
 
 
 
-
-
-
-
-
-
-
-
-
+			    <input class="device-list-button" type="submit" value="Submit" /> <!--add class -->
+			</form>
 		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="jquery.tablesorter.js"></script>
@@ -180,7 +228,6 @@
 		<script type="text/javascript">
 			$(function() {    
 				$("#tablesorter-demo").tablesorter();
-
 			}); 
 		</script>
 	</body>
