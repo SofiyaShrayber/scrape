@@ -35,7 +35,7 @@
 }
  
 .header-background {
-	height: 47px;
+	height: 49px;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -97,15 +97,15 @@ table {
   background-color: @table-bg-hover;
 }
 .sortArrow {
-  background: url("icons/bg.gif") 0 4px no-repeat transparent;
-  padding: 1px 10px;
-  line-height: 30px;
+  font-family: icomoon;
+  font-size: 14px;
+  margin-left: 10px;
 }
-.headerSortUp .sortArrow {
-  background: url("icons/asc.gif") 0 7px no-repeat transparent;
+.headerSortUp .sortArrow:before {
+    content: "\e6ec";
 }
-.headerSortDown .sortArrow {
-  background: url("icons/desc.gif") 0 7px no-repeat transparent;
+.headerSortDown .sortArrow:before{
+   content: "\e6eb";
 }
 
 // Zebra-striping
